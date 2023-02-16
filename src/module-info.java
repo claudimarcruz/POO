@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author claud
+ *
+ */
+module POO {
+}
