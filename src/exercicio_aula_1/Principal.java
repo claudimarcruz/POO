@@ -71,6 +71,8 @@ public class Principal{
 			
 		}
 		*/
+		
+		
 		Aluno aluno = new Aluno();
 		
 		
@@ -78,10 +80,13 @@ public class Principal{
 								aluno2.idadeAluno(aluno2),
 								aluno3.idadeAluno(aluno3));
 		
-		//public static Integer alunoMaisVelho(Integer indice){//}
 		
+		
+		//public static Integer alunoMaisVelho(Integer indice){//}
 		//System.out.println("Posicao: " + posicaoAluno );
 		//System.out.println("Nome: " + aluno.getDate() );
+		
+		//System.out.println("O aluno mais velho é " + aluno[posicaoAluno].getNome() + " com " + idadeAluno[posicaoAluno] + " anos de idade." );
 		
 		
 		
