@@ -7,15 +7,13 @@ public class Livro {
 	private String nome_livro;
 	private String autor;
 	private Date ano_publicacao;
-	private String categoria;
 	
-	public Livro(Integer id_livro, String nome_livro, String autor, Date ano_publicacao, String categoria ) {
+	public Livro(Integer id_livro, String nome_livro, String autor, Date ano_publicacao) {
 		super();
 		this.id_livro = id_livro;
 		this.nome_livro = nome_livro;
 		this.autor = autor;
 		this.ano_publicacao = ano_publicacao;
-		this.categoria = categoria;
 	}
 	
 	public Livro() {
@@ -55,12 +53,6 @@ public class Livro {
 		this.ano_publicacao = ano_publicacao;
 	}
 	
-	public String getCategoria() {
-		return categoria;
-	}
 	
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
-	}
 }
 
