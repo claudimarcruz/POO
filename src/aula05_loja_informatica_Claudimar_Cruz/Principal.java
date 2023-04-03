@@ -29,6 +29,7 @@ public class Principal {
 		tel_cliente1.add("0000-0000");
 		tel_cliente1.add("1111-1111");
 		Cadastro_clientes c1 = new Cadastro_clientes(1, "Cliente1", "000.000.000-00","cliente1@gmail", "Rua 1", formato.parse("10/05/1992"), tel_cliente1);
+		//c1.setTelefone()
 		clientes.add(c1);
 		
 		List<String> tel_cliente2= new ArrayList<String>();
@@ -73,8 +74,8 @@ public class Principal {
 		Fornecedor f2 = new Fornecedor(1002, "Global", "00.000.000/0000-11", "global@gmail.com","Rua 7", data2, tel_fornecedor2);
 		fornecedores.add(f2);
 		
-		
 		/*
+		
 		for(Cadastro_clientes cliente : clientes) {
 			System.out.println("id: " + cliente.getId());
 			System.out.println("Nome: " + cliente.getNome());
@@ -86,8 +87,8 @@ public class Principal {
 			System.out.println();
 			
 		}
-		*/
 		
+		*/
 		//produtos**************************
 		
 		List<Cadastro_produtos> produtos = new ArrayList<Cadastro_produtos>();
