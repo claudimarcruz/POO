@@ -27,11 +27,7 @@ public class Principal {
 		piz = new Pizza(6, "Pizza2", false, "recheio2", 32.00f, formato.parse("01/04/2023"), 280f);
 		listaPratos.add(piz);
 		
-		
-		//for(Prato p : listaPratos) {
-			//System.out.println(p.getNome());
-		//}
-		
+			
 		Cliente c = new Cliente("Cliente1");
 		List<String> pratoPedido = new ArrayList<String>();
 		pratoPedido.add("salgado1");
@@ -42,15 +38,6 @@ public class Principal {
 		//System.out.println(p1.getItensConsumidos());
 		pedido.add(p1);
 		
-		
-		/*
-		c = new Cliente("Cliente2");
-		pratoPedido.remove(0);
-		pratoPedido.add("salgado3");
-		pratoPedido.add("salgado4");
-		Pedido p2 = new Pedido(501, c.getNome(), 0.0f, pratoPedido);
-		pedido.add(p2);
-		*/
 	
 		for(Pedido pe: pedido) {
 			System.out.println(pe.getItensConsumidos()); 
@@ -58,28 +45,6 @@ public class Principal {
 		
 		
 		
-		
-		
-		/*
-		pratos.remove(0);
-		pratos.add("bdfbfdb");
-		pratos.add("b");
-		Pedido p2 = new Pedido(501, "Cliente2", 0.0f, pratos);
-		System.out.println(p2.getItensConsumidos());
-		
-		pratos.remove(0);
-		pratos.remove(0);
-		pratos.add("bdfffffffffffffffff");
-		Pedido p3 = new Pedido(502, "Cliente2", 0.0f, pratos);
-		System.out.println(p3.getItensConsumidos());
-		*/
-		
-		
 	}
 	
-	
-	
-	
-	
-
 }
