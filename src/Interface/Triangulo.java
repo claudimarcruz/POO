@@ -17,7 +17,8 @@ public class Triangulo implements FiguraGeometrica {
 	}
 	
 	public int getPerimetro() {
-		return lado1 + lado2;
+		return lado1 + lado2 * lado3;
+		
 	}
 	
 	
