@@ -21,6 +21,7 @@ public class ControllerProprietario {
 		cadastroProprietario.setBotaoBehaviorProp(new BotaoBehaviorProp());
 	}
 	
+	
 	class BotaoBehaviorProp implements ActionListener{
 		@Override
 		

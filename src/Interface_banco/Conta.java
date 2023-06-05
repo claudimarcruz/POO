@@ -1,4 +1,4 @@
-package Interface_banco;
+package Interface_banco; //modelo
 
 public class Conta {
 	private int numConta;

@@ -1,4 +1,4 @@
-package Interface_banco;
+package Interface_banco; //controller
 
 public class Banco_B implements Banco{
 	
