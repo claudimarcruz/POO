@@ -9,10 +9,12 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 
 import Trabalho_Etapa2_POO_ClaudimarCruz.Controller.BordaController;
@@ -38,15 +40,16 @@ public class TelaPizza extends JFrame {
 	//private JTextField textField_borda;
 	
 	JButton btnNewButton_pizza;
+	
 	JButton btn_molho;
 	JButton btn_recheio;
 	JButton btn_borda;
 	
-	@SuppressWarnings("rawtypes")
-	JComboBox comboBox_molho;
-	JComboBox comboBox_borda;
-	JComboBox comboBox_recheio1;
-	JComboBox comboBox_recheio2;
+	//@SuppressWarnings("rawtypes")
+	static JComboBox<MolhoModel> comboBox_molho;
+	JComboBox<BordaModel> comboBox_borda;
+	JComboBox<RecheioModel> comboBox_recheio1;
+	JComboBox<RecheioModel> comboBox_recheio2;
 
 
 	/**
@@ -242,27 +245,27 @@ public class TelaPizza extends JFrame {
 		comboBox_recheio2 = new JComboBox();
 		 comboBox_recheio2.setBounds(183, 245, 126, 22);
 		
-		 comboBox_recheio2.addAncestorListener(new AncestorListener() {
-			
-			public void ancestorAdded(AncestorEvent event) {
-				
-				RecheioController recheio = new RecheioController();
-				
-				List<RecheioModel> listaRecheio = recheio.getLista();
-				
-				 comboBox_recheio2.removeAll();
-				
-				for(RecheioModel rm : listaRecheio) {
-					 comboBox_recheio2.setSelectedItem(null);
-					 comboBox_recheio2.addItem(rm);
-				}
-			}
-			public void ancestorMoved(AncestorEvent event) {
-			}
-			public void ancestorRemoved(AncestorEvent event) {
-			}
-		});
-		panel_1.add(comboBox_recheio2);
+//		 comboBox_recheio2.addAncestorListener(new AncestorListener() {
+//			
+//			public void ancestorAdded(AncestorEvent event) {
+//				
+//				RecheioController recheio = new RecheioController();
+//				
+//				List<RecheioModel> listaRecheio = recheio.getLista();
+//				
+//				 comboBox_recheio2.removeAll();
+//				
+//				for(RecheioModel rm : listaRecheio) {
+//					 comboBox_recheio2.setSelectedItem(null);
+//					 comboBox_recheio2.addItem(rm);
+//				}
+//			}
+//			public void ancestorMoved(AncestorEvent event) {
+//			}
+//			public void ancestorRemoved(AncestorEvent event) {
+//			}
+//		});
+//		panel_1.add(comboBox_recheio2);
 		//*****************
 		
 		JPanel panel_2 = new JPanel();
@@ -364,5 +367,9 @@ public class TelaPizza extends JFrame {
 		btnNewButton_pizza.addActionListener(botaoBehaviorPizza);
 	}
 
+	public  static void atualizarComboMolho(ArrayList<MolhoModel> molhos){
+		
+		comboBox_molho.setModel(new DefaultComboBoxModel<>(molhos.toArray(new MolhoModel[0])));
+	}
 	
 }

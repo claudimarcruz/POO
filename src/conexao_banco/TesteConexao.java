@@ -24,7 +24,7 @@ public class TesteConexao {
             // Executar consultas ou operaÃ§Ãµes no banco de dados
             Statement statement = connection.createStatement();
             ResultSet resultSet = statement.executeQuery("SELECT * FROM animais");
-            /*
+            
             // insert
             String sql = "INSERT INTO animais(idAnimal, cor, nome, idade, raca, sexo) VALUES (?, ?, ?, ?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(sql);
@@ -41,7 +41,7 @@ public class TesteConexao {
             }else {
             	System.out.println("Erro!");
             }
-            */
+            
             
             //update
             

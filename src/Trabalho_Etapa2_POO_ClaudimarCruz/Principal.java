@@ -39,7 +39,7 @@ public class Principal {
 					TelaPedido tped = new TelaPedido();
 					TelaMolho tm = new TelaMolho();
 					TelaRecheio tr = new TelaRecheio();
-					TelaBorda tb = new TelaBorda();
+					TelaBorda tb = new TelaBorda(); 
 					
 					
 					new TelaInicialController(ti, tp, tl, ts, tf, tc, tped, tm, tr, tb);

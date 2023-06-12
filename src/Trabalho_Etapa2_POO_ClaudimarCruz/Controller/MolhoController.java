@@ -10,6 +10,7 @@ import javax.swing.JOptionPane;
 
 import Trabalho_Etapa2_POO_ClaudimarCruz.Model.MolhoModel;
 import Trabalho_Etapa2_POO_ClaudimarCruz.View.TelaMolho;
+import Trabalho_Etapa2_POO_ClaudimarCruz.View.TelaPizza;
 
 public class MolhoController {
 	static SimpleDateFormat formato = new SimpleDateFormat("dd/mm/yyyy");
@@ -65,6 +66,7 @@ public class MolhoController {
 	        		//*****************************************************
 	        		if(idMolho instanceof Integer && precoVenda instanceof Double) {
 	        			listaMolho.add(molho);
+	        			TelaPizza.atualizarComboMolho((ArrayList<MolhoModel>) listaMolho);
 	        			System.out.println("nome: " + nomeMolho);
 	        			JOptionPane.showMessageDialog(null, "Molho cadastrado!");
 		        	
