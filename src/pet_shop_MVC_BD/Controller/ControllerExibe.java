@@ -13,8 +13,8 @@ import pet_shop_MVC_BD.View.ViewExibe;
 
 public class ControllerExibe{
 	ViewExibe cadExibe;
-	String titulo = "Relatório";
-	String localPdf = "D:\\testePDF\\MeuPDF2.pdf";
+	String titulo = "######### Relatório Pet Shop #########";
+	String localPdf = "D:\\testePDF\\proprietario1.pdf";
 	
 	public ControllerExibe(ViewExibe cadastroExibe) {
 		cadExibe = cadastroExibe;

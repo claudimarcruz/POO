@@ -24,14 +24,18 @@ public class ExibeDAO {
 	    ResultSet resultSet = statement.executeQuery();
 	    //result.append("Resultado para do select: \n");
 	    while (resultSet.next()) {
+	    	
 	        String nomeProp = resultSet.getString("prop.nome");
+	       
 	        String nomeCao = resultSet.getString("cao.nome");
 	
 	        // Faça algo com os dados recuperados...
-	        
+	        result.append("\n");
+	        result.append("PROPRIETARIO").append("\n");
 	        result.append(" > Nome Proprietario: ").append(nomeProp).append("\n");
+	        result.append("\n");
+	        result.append("ANIMAIS").append("\n");
 	        result.append(" > Nome Cao: ").append(nomeCao).append("\n");
-	        result.append(" ******************************* \n");
 	    }
 	    return result.toString();
 	}
@@ -47,13 +51,10 @@ public class ExibeDAO {
 	    ResultSet resultSet = statement.executeQuery();
 	    //result.append("Resultado para do select: \n");
 	    while (resultSet.next()) {
-	        String nomeProp = resultSet.getString("prop.nome");
 	        String nomeGato = resultSet.getString("gato.nome");
 
 	        // Faça algo com os dados recuperados...
-	        result.append(" > Nome Proprietario: ").append(nomeProp).append("\n");
 	        result.append(" > Nome Gato: ").append(nomeGato).append("\n");
-	        result.append(" ******************************* \n");
 	    }
 	    return result.toString();
 	}
@@ -69,13 +70,10 @@ public class ExibeDAO {
 	    ResultSet resultSet = statement.executeQuery();
 	    //result.append("Resultado para do select: \n");
 	    while (resultSet.next()) {
-	        String nomeProp = resultSet.getString("prop.nome");
 	        String nomePassaro = resultSet.getString("passaro.nome");
 
 	        // Faça algo com os dados recuperados...
-	        result.append(" > Nome Proprietario: ").append(nomeProp).append("\n");
 	        result.append(" > Nome Passaro: ").append(nomePassaro).append("\n");
-	        result.append(" ******************************* \n");
 	    }
 	    return result.toString();
 	}
