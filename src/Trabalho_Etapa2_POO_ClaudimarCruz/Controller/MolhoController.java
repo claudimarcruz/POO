@@ -67,7 +67,7 @@ public class MolhoController {
 	        		if(idMolho instanceof Integer && precoVenda instanceof Double) {
 	        			listaMolho.add(molho);
 	        			TelaPizza.atualizarComboMolho((ArrayList<MolhoModel>) listaMolho);
-	        			System.out.println("nome: " + nomeMolho);
+	        			//System.out.println("nome: " + nomeMolho);
 	        			JOptionPane.showMessageDialog(null, "Molho cadastrado!");
 		        	
 	        			System.out.println("Molhos Cadastrados");

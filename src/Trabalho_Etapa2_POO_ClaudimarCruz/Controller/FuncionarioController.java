@@ -2,14 +2,18 @@ package Trabalho_Etapa2_POO_ClaudimarCruz.Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import Trabalho_Etapa2_POO_ClaudimarCruz.Conexao.ConexaoBanco;
+import Trabalho_Etapa2_POO_ClaudimarCruz.Model.FuncionarioDAO;
 import Trabalho_Etapa2_POO_ClaudimarCruz.Model.FuncionarioModel;
 import Trabalho_Etapa2_POO_ClaudimarCruz.View.TelaFuncionario;
+import Trabalho_Etapa2_POO_ClaudimarCruz.View.TelaPedido;
 
 public class FuncionarioController {
 	static SimpleDateFormat formato = new SimpleDateFormat("dd/mm/yyyy");
@@ -32,6 +36,7 @@ public class FuncionarioController {
 	}
 	
 	class BotaoBehaviorFunc implements ActionListener{
+		@SuppressWarnings("static-access")
 		@Override
 		
 		public void actionPerformed(ActionEvent e) {
@@ -56,9 +61,9 @@ public class FuncionarioController {
 	    	tel.add(telaFunc.getTel1());
 	    	tel.add(telaFunc.getTel2());
 	    	
-	    	Double salario = null;
+	    	Float salario = null;
 	    	try {
-	    		salario = Double.parseDouble(telaFunc.getSalario());
+	    		salario = Float.parseFloat(telaFunc.getSalario());
 	    	}catch(Exception ex) {
 	    		JOptionPane.showMessageDialog(null, " ERRO! - Conferir campo Salário");
 	    	}
@@ -82,9 +87,28 @@ public class FuncionarioController {
 	        	}else {
 	        		
 	        		//*****************************************************
-	        		if(codigo instanceof Integer && salario instanceof Double) {
+	        		if(codigo instanceof Integer && salario instanceof Float) {
 	        			listaFuncionario.add(func);
+	        			TelaPedido.atualizarComboFunc((ArrayList<FuncionarioModel>)listaFuncionario);
 	        			JOptionPane.showMessageDialog(null, "Funcionário cadastrado!");
+	        			
+	        			ConexaoBanco conexao = new ConexaoBanco();
+	        			conexao.conectarBanco();
+	        			FuncionarioDAO funcDAO = new FuncionarioDAO();
+	        			
+//	        			try {
+//							funcDAO.selectCadastro();
+//						} catch (SQLException e1) {
+//							// TODO Auto-generated catch block
+//							e1.printStackTrace();
+//						}
+//	        			
+	        			try {
+	        				funcDAO.insertCadastro(codigo, nome, cpf, end, tel, salario, cargo);
+						} catch (SQLException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
 	        			
 	        			System.out.println("Funcionários Cadastrados");
 	        			 System.out.println("");

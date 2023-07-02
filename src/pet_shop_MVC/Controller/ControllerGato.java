@@ -2,9 +2,12 @@ package pet_shop_MVC.Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+
+
 import pet_shop_MVC.Model.ModelGato;
 import pet_shop_MVC.View.ViewGato;
 
@@ -20,6 +23,7 @@ public class ControllerGato {
 	}
 	
 	class BotaoBehaviorGato implements ActionListener{
+		@SuppressWarnings("static-access")
 		@Override
 		
 		public void actionPerformed(ActionEvent e) {
@@ -90,7 +94,7 @@ public class ControllerGato {
 	        String aux ="";
 			for (int i=0 ; i < listaGato.size(); i ++) {
 				
-				aux = aux + "Id: " + listaGato.get(i).getId() + "  /  Nome: " + listaGato.get(i).getId() + "  /  Raça: " + listaGato.get(i).getRaca()
+				aux = aux + "Id: " + listaGato.get(i).getId() + "  /  Nome: " + listaGato.get(i).getNome() + "  /  Raça: " + listaGato.get(i).getRaca()
 						+ "  /  Cor: " + listaGato.get(i).getCor() + "  /  Sexo: " + listaGato.get(i).getSexo() + "  /  Porte: " + listaGato.get(i).getPorte()
 						+ "  /  Peso: " + listaGato.get(i).getPeso()+ "\n";
 			

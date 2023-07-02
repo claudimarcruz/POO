@@ -47,9 +47,9 @@ public class TelaPizza extends JFrame {
 	
 	//@SuppressWarnings("rawtypes")
 	static JComboBox<MolhoModel> comboBox_molho;
-	JComboBox<BordaModel> comboBox_borda;
-	JComboBox<RecheioModel> comboBox_recheio1;
-	JComboBox<RecheioModel> comboBox_recheio2;
+	static JComboBox<BordaModel> comboBox_borda;
+	static JComboBox<RecheioModel> comboBox_recheio1;
+	static JComboBox<RecheioModel> comboBox_recheio2;
 
 
 	/**
@@ -145,32 +145,14 @@ public class TelaPizza extends JFrame {
 		lblNewLabel_1_1_1_1_1_1.setBounds(44, 170, 119, 14);
 		panel_1.add(lblNewLabel_1_1_1_1_1_1);
 		
-	
-		//@SuppressWarnings("rawtypes")
+
 		comboBox_molho = new JComboBox();
 		comboBox_molho.setBounds(183, 167, 126, 20);
-		
-		comboBox_molho.addAncestorListener(new AncestorListener() {
-			
-			public void ancestorAdded(AncestorEvent event) {
-				
-				MolhoController molho = new MolhoController();
-				
-				List<MolhoModel> listaMolho = molho.getLista();
-				
-				comboBox_molho.removeAll();
-				
-				for(MolhoModel mm : listaMolho) {
-					comboBox_molho.setSelectedItem(null);
-					comboBox_molho.addItem(mm);
-				}
-				}
-			public void ancestorMoved(AncestorEvent event) {
-			}
-			public void ancestorRemoved(AncestorEvent event) {
-			}
-		});
+		comboBox_molho.setSelectedItem(null);
+		comboBox_molho.removeAll();
 		panel_1.add(comboBox_molho);
+		
+
 		
 		
 		JLabel lblNewLabel_1_1_1_1_1_1_1 = new JLabel("Borda");
@@ -178,62 +160,26 @@ public class TelaPizza extends JFrame {
 		lblNewLabel_1_1_1_1_1_1_1.setBounds(44, 195, 119, 14);
 		panel_1.add(lblNewLabel_1_1_1_1_1_1_1);
 		
-		//@SuppressWarnings("rawtypes")
+		
 		comboBox_borda = new JComboBox();
 		comboBox_borda.setBounds(183, 192, 126, 20);
-		
-		comboBox_borda.addAncestorListener(new AncestorListener() {
-			
-			public void ancestorAdded(AncestorEvent event) {
-				
-				BordaController borda = new BordaController();
-				
-				List<BordaModel> listaBorda = borda.getLista();
-				
-				comboBox_borda.removeAll();
-				
-				for(BordaModel bm : listaBorda) {
-					comboBox_borda.setSelectedItem(null);
-					comboBox_borda.addItem(bm);
-				}
-			}
-			public void ancestorMoved(AncestorEvent event) {
-			}
-			public void ancestorRemoved(AncestorEvent event) {
-			}
-		});
+		comboBox_borda.removeAll();
 		panel_1.add(comboBox_borda);
+		
+
 		
 		JLabel lblNewLabel_1_1_1_1_1_1_1_1 = new JLabel("Recheio 1");
 		lblNewLabel_1_1_1_1_1_1_1_1.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		lblNewLabel_1_1_1_1_1_1_1_1.setBounds(44, 220, 119, 14);
 		panel_1.add(lblNewLabel_1_1_1_1_1_1_1_1);
 		
-		//@SuppressWarnings("rawtypes")
+		
 		comboBox_recheio1 = new JComboBox();
 		comboBox_recheio1.setBounds(183, 218, 126, 22);
-		
-		comboBox_recheio1.addAncestorListener(new AncestorListener() {
-			
-			public void ancestorAdded(AncestorEvent event) {
-				
-				RecheioController recheio = new RecheioController();
-				
-				List<RecheioModel> listaRecheio = recheio.getLista();
-				
-				 comboBox_recheio1.removeAll();
-				
-				for(RecheioModel rm : listaRecheio) {
-					 comboBox_recheio1.setSelectedItem(null);
-					 comboBox_recheio1.addItem(rm);
-				}
-			}
-			public void ancestorMoved(AncestorEvent event) {
-			}
-			public void ancestorRemoved(AncestorEvent event) {
-			}
-		});
+		comboBox_recheio1.removeAll();
+		comboBox_recheio1.setSelectedItem(null);
 		panel_1.add(comboBox_recheio1);
+		
 		
 		
 		JLabel lblNewLabel_1_1_1_1_1_1_1_1_1 = new JLabel("Recheio 2");
@@ -241,31 +187,13 @@ public class TelaPizza extends JFrame {
 		lblNewLabel_1_1_1_1_1_1_1_1_1.setBounds(44, 245, 119, 14);
 		panel_1.add(lblNewLabel_1_1_1_1_1_1_1_1_1);
 		
-		//@SuppressWarnings("rawtypes")
 		comboBox_recheio2 = new JComboBox();
-		 comboBox_recheio2.setBounds(183, 245, 126, 22);
-		
-//		 comboBox_recheio2.addAncestorListener(new AncestorListener() {
-//			
-//			public void ancestorAdded(AncestorEvent event) {
-//				
-//				RecheioController recheio = new RecheioController();
-//				
-//				List<RecheioModel> listaRecheio = recheio.getLista();
-//				
-//				 comboBox_recheio2.removeAll();
-//				
-//				for(RecheioModel rm : listaRecheio) {
-//					 comboBox_recheio2.setSelectedItem(null);
-//					 comboBox_recheio2.addItem(rm);
-//				}
-//			}
-//			public void ancestorMoved(AncestorEvent event) {
-//			}
-//			public void ancestorRemoved(AncestorEvent event) {
-//			}
-//		});
-//		panel_1.add(comboBox_recheio2);
+		comboBox_recheio2.setBounds(183, 245, 126, 22);
+		comboBox_recheio2.removeAll();
+		comboBox_recheio2.setSelectedItem(null);
+		panel_1.add(comboBox_recheio2);
+		 
+		 
 		//*****************
 		
 		JPanel panel_2 = new JPanel();
@@ -370,6 +298,21 @@ public class TelaPizza extends JFrame {
 	public  static void atualizarComboMolho(ArrayList<MolhoModel> molhos){
 		
 		comboBox_molho.setModel(new DefaultComboBoxModel<>(molhos.toArray(new MolhoModel[0])));
+	}
+	
+	public  static void atualizarComboBorda(ArrayList<BordaModel> bordas){
+		
+		comboBox_borda.setModel(new DefaultComboBoxModel<>(bordas.toArray(new BordaModel[0])));
+	}
+	
+	public  static void atualizarComboRecheio1(ArrayList<RecheioModel> recheio){
+		
+		comboBox_recheio1.setModel(new DefaultComboBoxModel<>(recheio.toArray(new RecheioModel[0])));
+	}
+	
+	public  static void atualizarComboRecheio2(ArrayList<RecheioModel> recheio){
+		
+		comboBox_recheio2.setModel(new DefaultComboBoxModel<>(recheio.toArray(new RecheioModel[0])));
 	}
 	
 }

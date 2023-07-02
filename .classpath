@@ -11,5 +11,23 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/claud/Downloads/arquivos_script_jars_AdrianoRosa/jars itext/svg-8.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/claud/Downloads/arquivos_script_jars_AdrianoRosa/jars itext/styled-xml-parser-8.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/claud/Downloads/arquivos_script_jars_AdrianoRosa/jars itext/slf4j-api-2.0.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/claud/Downloads/arquivos_script_jars_AdrianoRosa/jars itext/sign-8.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/claud/Downloads/arquivos_script_jars_AdrianoRosa/jars itext/pdfa-8.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/claud/Downloads/arquivos_script_jars_AdrianoRosa/jars itext/layout-8.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/claud/Downloads/arquivos_script_jars_AdrianoRosa/jars itext/kernel-8.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/claud/Downloads/arquivos_script_jars_AdrianoRosa/jars itext/hyph-8.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/claud/Downloads/arquivos_script_jars_AdrianoRosa/jars itext/io-8.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/claud/Downloads/arquivos_script_jars_AdrianoRosa/jars itext/html2pdf-5.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/claud/Downloads/arquivos_script_jars_AdrianoRosa/jars itext/font-asian-8.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/claud/Downloads/arquivos_script_jars_AdrianoRosa/jars itext/forms-8.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/claud/Downloads/arquivos_script_jars_AdrianoRosa/jars itext/commons-8.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/claud/Downloads/arquivos_script_jars_AdrianoRosa/jars itext/bouncy-castle-connector-8.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/claud/Downloads/arquivos_script_jars_AdrianoRosa/jars itext/barcodes-8.0.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/claud/Downloads/itextpdf-5.5.13.3/itextpdf-5.5.13.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/claud/Downloads/itextpdf-5.5.13.3/itextpdf-5.5.13.3-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/claud/Downloads/itextpdf-5.5.13.3/itextpdf-5.5.13.3-javadoc.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

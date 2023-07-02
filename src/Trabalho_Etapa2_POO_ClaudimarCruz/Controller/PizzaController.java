@@ -2,6 +2,7 @@ package Trabalho_Etapa2_POO_ClaudimarCruz.Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,6 +10,8 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import Trabalho_Etapa2_POO_ClaudimarCruz.Conexao.ConexaoBanco; 
+import Trabalho_Etapa2_POO_ClaudimarCruz.Model.PizzaDAO;
 import Trabalho_Etapa2_POO_ClaudimarCruz.Model.PizzaModel;
 import Trabalho_Etapa2_POO_ClaudimarCruz.View.TelaPizza;
 
@@ -34,6 +37,7 @@ public class PizzaController {
 	}
 	
 	class BotaoBehaviorPizza implements ActionListener{
+		@SuppressWarnings("static-access")
 		@Override
 		
 		public void actionPerformed(ActionEvent e) {
@@ -100,8 +104,27 @@ public class PizzaController {
 	        				&& precoVenda instanceof Double && peso instanceof Double ) {
 	        			listaPizza.add(pizza);
 			        //listarProprietarios(listaProprietario);
-	        			System.out.println("nome: " + nomePizza);
+	        			//System.out.println("nome: " + nomePizza);
 		        	JOptionPane.showMessageDialog(null, "Pizza cadastrada!");
+		        	
+		        	ConexaoBanco conexao = new ConexaoBanco();
+        			conexao.conectarBanco();
+        			PizzaDAO pizzaDAO = new PizzaDAO();
+        			
+//        			try {
+//						pizzaDAO.selectCadastro();
+//					} catch (SQLException e1) {
+//						// TODO Auto-generated catch block
+//						e1.printStackTrace();
+//					}
+//        			
+        			try {
+        				pizzaDAO.insertCadastro(idPizza, nomePizza, precoVenda, null, peso, molho, recheio1, borda);
+					} catch (SQLException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+        			
 		        	
 		        	
 		        	

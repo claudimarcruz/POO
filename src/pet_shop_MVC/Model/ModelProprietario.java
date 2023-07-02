@@ -3,10 +3,10 @@ package pet_shop_MVC.Model;
 import java.util.Date;
 
 public class ModelProprietario {
-	private Integer id;
+	private Integer CPF;
 	private String nome;
 	private Date data_nascimento;
-	private String CPF;
+	private String email;
 	private String telefone;
 	private String endereco;
 	
@@ -14,22 +14,23 @@ public class ModelProprietario {
 		super();
 	}
 
-	public ModelProprietario(Integer id, String nome, Date data_nascimento, String CPF, String telefone, String endereco) {
+	public ModelProprietario(Integer cPF, String nome, Date data_nascimento, String email, String telefone,
+			String endereco) {
 		super();
-		this.id = id;
+		CPF = cPF;
 		this.nome = nome;
 		this.data_nascimento = data_nascimento;
-		this.CPF = CPF;
+		this.email = email;
 		this.telefone = telefone;
 		this.endereco = endereco;
 	}
 
-	public Integer getId() {
-		return id;
+	public Integer getCPF() {
+		return CPF;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setCPF(Integer cPF) {
+		CPF = cPF;
 	}
 
 	public String getNome() {
@@ -48,12 +49,12 @@ public class ModelProprietario {
 		this.data_nascimento = data_nascimento;
 	}
 
-	public String getCPF() {
-		return CPF;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setCPF(String CPF) {
-		this.CPF = CPF;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getTelefone() {
@@ -71,5 +72,7 @@ public class ModelProprietario {
 	public void setEndereco(String endereco) {
 		this.endereco = endereco;
 	}
+
+	
 	
 }

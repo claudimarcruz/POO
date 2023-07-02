@@ -2,6 +2,7 @@ package Trabalho_Etapa2_POO_ClaudimarCruz.Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,8 +10,11 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import Trabalho_Etapa2_POO_ClaudimarCruz.Conexao.ConexaoBanco;
+import Trabalho_Etapa2_POO_ClaudimarCruz.Model.ClienteDAO;
 import Trabalho_Etapa2_POO_ClaudimarCruz.Model.ClienteModel;
 import Trabalho_Etapa2_POO_ClaudimarCruz.View.TelaCliente;
+import Trabalho_Etapa2_POO_ClaudimarCruz.View.TelaPedido;
 
 public class ClienteController {
 	static SimpleDateFormat formato = new SimpleDateFormat("dd/mm/yyyy");
@@ -32,6 +36,7 @@ public class ClienteController {
 	}
 	
 	class BotaoBehaviorCliente implements ActionListener{
+		@SuppressWarnings("static-access")
 		@Override
 		
 		public void actionPerformed(ActionEvent e) {
@@ -81,7 +86,27 @@ public class ClienteController {
 	        		//*****************************************************
 	        		if(codigo instanceof Integer && dataNasc instanceof Date ) {
 	        			listaCliente.add(cliente);
+	        			TelaPedido.atualizarComboCliente((ArrayList<ClienteModel>)listaCliente);
 	        			JOptionPane.showMessageDialog(null, "Cliente cadastrado!");
+	        			
+	        			ConexaoBanco conexao = new ConexaoBanco();
+	        			conexao.conectarBanco();
+	        			ClienteDAO clienteDAO = new ClienteDAO();
+	        			
+//	        			try {
+//							clienteDAO.selectCadastro();
+//						} catch (SQLException e1) {
+//							// TODO Auto-generated catch block
+//							e1.printStackTrace();
+//						}
+//	        			
+	        			try {
+	        				clienteDAO.insertCadastro(codigo, nome, cpf, end, tel, null);
+						} catch (SQLException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+	        			
 	        			
 	        			 System.out.println("Clientes Cadastrados");
 	        			 System.out.println("");

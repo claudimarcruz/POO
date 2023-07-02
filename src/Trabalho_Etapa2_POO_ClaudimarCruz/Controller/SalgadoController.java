@@ -2,6 +2,7 @@ package Trabalho_Etapa2_POO_ClaudimarCruz.Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,7 +10,12 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import Trabalho_Etapa2_POO_ClaudimarCruz.Conexao.ConexaoBanco;
+import Trabalho_Etapa2_POO_ClaudimarCruz.Model.LancheModel;
+import Trabalho_Etapa2_POO_ClaudimarCruz.Model.PizzaDAO;
 import Trabalho_Etapa2_POO_ClaudimarCruz.Model.SalgadinhoModel;
+import Trabalho_Etapa2_POO_ClaudimarCruz.Model.SalgadoDAO;
+import Trabalho_Etapa2_POO_ClaudimarCruz.View.TelaPedido;
 import Trabalho_Etapa2_POO_ClaudimarCruz.View.TelaSalgado;
 
 
@@ -34,6 +40,7 @@ public class SalgadoController {
 	}
 	
 	class BotaoBehaviorSalgado implements ActionListener{
+		@SuppressWarnings("static-access")
 		@Override
 		
 		public void actionPerformed(ActionEvent e) {
@@ -97,7 +104,27 @@ public class SalgadoController {
 	        		if(idLanche instanceof Integer && dataValidade instanceof Date 
 	        				&& precoVenda instanceof Double && peso instanceof Double 	) {
 	        			listaSalgado.add(salgado);
+	        			//TelaPedido.atualizarComboSalgado((ArrayList<SalgadinhoModel>)listaSalgado);
 	        			JOptionPane.showMessageDialog(null, "Salgado cadastrado!");
+	        			
+	        			ConexaoBanco conexao = new ConexaoBanco();
+	        			conexao.conectarBanco();
+	        			SalgadoDAO salgDAO = new SalgadoDAO();
+	        			
+//	        			try {
+//							salgDAO.selectCadastro();
+//						} catch (SQLException e1) {
+//							// TODO Auto-generated catch block
+//							e1.printStackTrace();
+//						}
+//	        			
+	        			try {
+	        				salgDAO.insertCadastro(idLanche, nomeLanche, precoVenda, null, peso, recheio, massa, tipo);
+						} catch (SQLException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
+	        			
 	        			
 	        			System.out.println("Salgados Cadastrados");
 	       			 	System.out.println("");

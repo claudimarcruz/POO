@@ -10,10 +10,12 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.List;
 
 import Trabalho_Etapa2_POO_ClaudimarCruz.Controller.ClienteController;
@@ -24,7 +26,9 @@ import Trabalho_Etapa2_POO_ClaudimarCruz.Controller.SalgadoController;
 import Trabalho_Etapa2_POO_ClaudimarCruz.Model.ClienteModel;
 import Trabalho_Etapa2_POO_ClaudimarCruz.Model.FuncionarioModel;
 import Trabalho_Etapa2_POO_ClaudimarCruz.Model.LancheModel;
+import Trabalho_Etapa2_POO_ClaudimarCruz.Model.MolhoModel;
 import Trabalho_Etapa2_POO_ClaudimarCruz.Model.PizzaModel;
+import Trabalho_Etapa2_POO_ClaudimarCruz.Model.PratoModel;
 import Trabalho_Etapa2_POO_ClaudimarCruz.Model.SalgadinhoModel;
 
 public class TelaPedido extends JFrame {
@@ -42,12 +46,9 @@ public class TelaPedido extends JFrame {
 	
 	JButton btnNewButton_pedido;
 	
-	@SuppressWarnings("rawtypes")
-	JComboBox comboBox_cliente;
-	@SuppressWarnings("rawtypes")
-	JComboBox comboBox_func; 
-	@SuppressWarnings("rawtypes")
-	JComboBox comboBox_prato;
+	static JComboBox<ClienteModel>comboBox_cliente;
+	static JComboBox<FuncionarioModel>comboBox_func; 
+	static JComboBox<PratoModel>comboBox_prato;
 	
 	/**
 	 * Create the frame.
@@ -100,29 +101,12 @@ public class TelaPedido extends JFrame {
 		 
 
 		comboBox_cliente = new JComboBox();
-		 comboBox_cliente.setBounds(183, 64, 126, 20);
-		
-		 comboBox_cliente.addAncestorListener(new AncestorListener() {
-			public void ancestorAdded(AncestorEvent event) {
-				
-				ClienteController cliente = new ClienteController();
-				
-				List<ClienteModel> listaCliente = cliente.getLista();
-				
-				 comboBox_cliente.removeAll();
-				
-				for(ClienteModel cm : listaCliente) {
-					 comboBox_cliente.setSelectedItem(null);
-					 comboBox_cliente.addItem(cm);
-				}
-			}
-			public void ancestorMoved(AncestorEvent event) {
-			}
-			public void ancestorRemoved(AncestorEvent event) {
-			}
-		});
+		comboBox_cliente.setBounds(183, 64, 126, 20);
+		comboBox_cliente.removeAll();
+		comboBox_cliente.setSelectedItem(null);
 		panel_1.add( comboBox_cliente);
 		
+
 		
 		
 		JLabel lblNewLabel_1_1_1 = new JLabel("Funcionario");
@@ -133,29 +117,11 @@ public class TelaPedido extends JFrame {
 	
 		comboBox_func = new JComboBox();
 		comboBox_func.setBounds(183, 89, 126, 20);
-		
-		comboBox_func.addAncestorListener(new AncestorListener() {
-			public void ancestorAdded(AncestorEvent event) {
-				
-			FuncionarioController func = new FuncionarioController();
-				
-			List<FuncionarioModel> listaFuncionario = func.getLista();
-				
-			comboBox_func.removeAll();
-				
-				for(FuncionarioModel fm : listaFuncionario) {
-					comboBox_func.setSelectedItem(null);
-					comboBox_func.addItem(fm);
-				}
-			}
-			public void ancestorMoved(AncestorEvent event) {
-			}
-			public void ancestorRemoved(AncestorEvent event) {
-			}
-		});
+		comboBox_func.removeAll();
+		comboBox_func.setSelectedItem(null);
 		panel_1.add(comboBox_func);
 		
-		
+
 		JLabel lblNewLabel_1_1_1_1 = new JLabel("Taxa de Serviço");
 		lblNewLabel_1_1_1_1.setFont(new Font("Times New Roman", Font.PLAIN, 18));
 		lblNewLabel_1_1_1_1.setBounds(44, 117, 139, 14);
@@ -176,44 +142,48 @@ public class TelaPedido extends JFrame {
 		
 		comboBox_prato = new JComboBox();
 		comboBox_prato .setBounds(183, 140, 126, 20);
+		comboBox_prato.removeAll();
+		comboBox_prato.setSelectedItem(null);
+		panel_1.add(comboBox_prato);
 		
-		comboBox_prato .addAncestorListener(new AncestorListener() {
-			public void ancestorAdded(AncestorEvent event) {
-				
-				PizzaController pizza = new PizzaController();
-				SalgadoController salgado = new SalgadoController();
-				LancheController lanche = new LancheController();
-				
-				List<PizzaModel> listaPizza = pizza.getLista();
-				List<SalgadinhoModel> listaSalgado = salgado.getLista();
-				List<LancheModel> listaLanche = lanche.getLista();
-				
-				comboBox_prato.removeAll();
-				
-				for(PizzaModel pm : listaPizza){
-					comboBox_prato.setSelectedItem(null);
-					comboBox_prato.addItem(pm);
-				}
-				
-				for(SalgadinhoModel sm : listaSalgado){
-					comboBox_prato.setSelectedItem(null);
-					comboBox_prato.addItem(sm);
-				}
-				
-				for(LancheModel lm : listaLanche){
-					comboBox_prato.setSelectedItem(null);
-					comboBox_prato.addItem(lm);
-				}
-							
-	
-			}
-			public void ancestorMoved(AncestorEvent event) {
-			}
-			public void ancestorRemoved(AncestorEvent event) {
-			}
+		comboBox_prato.addAncestorListener(new AncestorListener() {
+		    public void ancestorAdded(AncestorEvent event) {
+//		        if (comboBox_prato.getItemCount() > 0) {
+//		            // Os itens já foram adicionados, então não precisamos adicionar novamente
+//		            return;
+//		        }
+		        
+		        PizzaController pizza = new PizzaController();
+		        SalgadoController salgado = new SalgadoController();
+		        LancheController lanche = new LancheController();
+		        
+		        List<PizzaModel> listaPizza = pizza.getLista();
+		        List<SalgadinhoModel> listaSalgado = salgado.getLista();
+		        List<LancheModel> listaLanche = lanche.getLista();
+		        
+		        comboBox_prato.removeAllItems();
+		        
+		        for(PizzaModel pm : listaPizza){
+		            comboBox_prato.addItem(pm);
+		        }
+		        
+		        for(SalgadinhoModel sm : listaSalgado){
+		            comboBox_prato.addItem(sm);
+		        }
+		        
+		        for(LancheModel lm : listaLanche){
+		            comboBox_prato.addItem(lm);
+		        }
+		    }
+		    
+		    public void ancestorMoved(AncestorEvent event) {
+		    }
+		    
+		    public void ancestorRemoved(AncestorEvent event) {
+		    }
 		});
-		panel_1.add(comboBox_prato );
-		
+		panel_1.add(comboBox_prato);
+
 		
 		JLabel lblNewLabel_6= new JLabel("Quantidade");
 		lblNewLabel_6.setFont(new Font("Times New Roman", Font.PLAIN, 18));
@@ -283,7 +253,28 @@ public class TelaPedido extends JFrame {
 		btnNewButton_pedido.addActionListener(botaoBehaviorPedido);
 	}
 	
+	public  static void atualizarComboCliente(ArrayList<ClienteModel> clientes){
+		
+		comboBox_cliente.setModel(new DefaultComboBoxModel<>(clientes.toArray(new ClienteModel[0])));
+	}
 	
+	public  static void atualizarComboFunc(ArrayList<FuncionarioModel> funcs){
+		
+		comboBox_func.setModel(new DefaultComboBoxModel<>(funcs.toArray(new FuncionarioModel[0])));
+	}
+	
+//	public  static void atualizarComboLanche(ArrayList<LancheModel> pratos){
+//		
+//		comboBox_prato.setModel(new DefaultComboBoxModel<>(pratos.toArray(new LancheModel[0])));
+//	}
+//	
+//	public  static void atualizarComboSalgado(ArrayList<SalgadinhoModel> pratos){
+//		
+//		comboBox_prato.setModel(new DefaultComboBoxModel<>(pratos.toArray(new SalgadinhoModel[0])));
+//	}
+//	
+//	
+
 
 	
 }

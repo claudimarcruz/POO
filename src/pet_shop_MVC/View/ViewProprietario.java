@@ -16,7 +16,7 @@ public class ViewProprietario extends JFrame {
 	
 	private static final long serialVersion = 1L;
 	
-	JTextField textID, textNome, textDNasc, textCpf, textTel, textEnd;
+	JTextField textEmail, textNome, textDNasc, textCpf, textTel, textEnd;
 	
 	JTextArea visor;
 	
@@ -31,10 +31,10 @@ public class ViewProprietario extends JFrame {
 		add(new JLabel(" "));
 		
 		
-		label = new JLabel("ID");
+		label = new JLabel("CPF");
 	    add(label);
-		textID = new JTextField(8);
-		add(textID);
+		textCpf = new JTextField(15);
+		add(textCpf);
 		//add(new JLabel(" "));
 		
 		label = new JLabel("Nome");
@@ -48,10 +48,10 @@ public class ViewProprietario extends JFrame {
 		textDNasc = new JTextField(15);
 		add(textDNasc);
 		
-		label = new JLabel("CPF");
+		label = new JLabel("Email");
 	    add(label);
-		textCpf = new JTextField(15);
-		add(textCpf);
+	    textEmail = new JTextField(15);
+		add(textEmail);
 		
 		label = new JLabel("Telefone");
 	    add(label);
@@ -78,8 +78,8 @@ public class ViewProprietario extends JFrame {
 		setVisible(true);
 	}
 
-	public String getID() {
-		return textID.getText();
+	public String getEmail() {
+		return textEmail.getText();
 	}
 
 	public String getNome() {

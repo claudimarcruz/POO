@@ -2,9 +2,12 @@ package pet_shop_MVC.Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+
+
 import pet_shop_MVC.Model.ModelPassaro;
 import pet_shop_MVC.View.ViewPassaro;
 
@@ -20,6 +23,7 @@ public class ControllerPassaro {
 	}
 	
 	class BotaoBehaviorPassaro implements ActionListener{
+		@SuppressWarnings("static-access")
 		@Override
 		
 		public void actionPerformed(ActionEvent e) {
@@ -84,7 +88,7 @@ public class ControllerPassaro {
 	        String aux ="";
 			for (int i=0 ; i < listaPassaro.size(); i ++) {
 				
-				aux = aux + "Id: " + listaPassaro.get(i).getId() + "  /  Nome: " + listaPassaro.get(i).getId() + "  /  Raça: " + listaPassaro.get(i).getRaca()
+				aux = aux + "Id: " + listaPassaro.get(i).getId() + "  /  Nome: " + listaPassaro.get(i).getNome() + "  /  Raça: " + listaPassaro.get(i).getRaca()
 						+ "  /  Cor: " + listaPassaro.get(i).getCor() + "  /  Sexo: " + listaPassaro.get(i).getSexo() + "  /  Anilha: " + listaPassaro.get(i).getNum_anilha()
 						+ "\n";
 			

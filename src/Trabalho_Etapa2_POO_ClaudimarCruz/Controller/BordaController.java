@@ -9,7 +9,9 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import Trabalho_Etapa2_POO_ClaudimarCruz.Model.BordaModel;
+import Trabalho_Etapa2_POO_ClaudimarCruz.Model.MolhoModel;
 import Trabalho_Etapa2_POO_ClaudimarCruz.View.TelaBorda;
+import Trabalho_Etapa2_POO_ClaudimarCruz.View.TelaPizza;
 
 
 public class BordaController {
@@ -62,6 +64,7 @@ public class BordaController {
 	        		//*****************************************************
 	        		if(precoVenda instanceof Double) {
 	        			listaBorda.add(borda);
+	        			TelaPizza.atualizarComboBorda((ArrayList<BordaModel>) listaBorda);
 		        	JOptionPane.showMessageDialog(null, "Borda cadastrada!");
 		        	
 		        	System.out.println("Bordas Cadastrados");

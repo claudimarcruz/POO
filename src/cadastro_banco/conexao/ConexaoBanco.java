@@ -25,7 +25,7 @@ public class ConexaoBanco {
 	        // Estabelecer a conexÃ£o com o banco de dados
 	        connection = DriverManager.getConnection(url, user, password);
 	        } catch (ClassNotFoundException e) {
-	        System.out.println("Driver JDBC nÃ£o encontrado");
+	        System.out.println("Driver  JDBC nÃ£o encontrado");
 	        e.printStackTrace();
 			return false;
 	    } catch (SQLException e) {

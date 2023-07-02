@@ -2,6 +2,7 @@ package Trabalho_Etapa2_POO_ClaudimarCruz.Controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,8 +10,14 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import Trabalho_Etapa2_POO_ClaudimarCruz.Conexao.ConexaoBanco;
+import Trabalho_Etapa2_POO_ClaudimarCruz.Model.ClienteModel;
+import Trabalho_Etapa2_POO_ClaudimarCruz.Model.LancheDAO;
 import Trabalho_Etapa2_POO_ClaudimarCruz.Model.LancheModel;
+import Trabalho_Etapa2_POO_ClaudimarCruz.Model.PizzaDAO;
+import Trabalho_Etapa2_POO_ClaudimarCruz.Model.PratoModel;
 import Trabalho_Etapa2_POO_ClaudimarCruz.View.TelaLanche;
+import Trabalho_Etapa2_POO_ClaudimarCruz.View.TelaPedido;
 
 
 public class LancheController {
@@ -33,6 +40,7 @@ public class LancheController {
 	}
 	
 	class BotaoBehaviorLanche implements ActionListener{
+		@SuppressWarnings("static-access")
 		@Override
 		
 		public void actionPerformed(ActionEvent e) {
@@ -98,7 +106,26 @@ public class LancheController {
 	        		if(idLanche instanceof Integer && dataValidade instanceof Date 
 	        				&& precoVenda instanceof Double && peso instanceof Double 	) {
 	        			listaLanche.add(lanche);
+	        			//TelaPedido.atualizarComboLanche((ArrayList<LancheModel>)listaLanche);
 	        			JOptionPane.showMessageDialog(null, "Lanche cadastrado!");
+	        			
+	        			ConexaoBanco conexao = new ConexaoBanco();
+	        			conexao.conectarBanco();
+	        			LancheDAO lancheDAO = new LancheDAO();
+	        			
+//	        			try {
+//							lancheDAO.selectCadastro();
+//						} catch (SQLException e1) {
+//							// TODO Auto-generated catch block
+//							e1.printStackTrace();
+//						}
+//	        			
+	        			try {
+	        				lancheDAO.insertCadastro(idLanche, nomeLanche, precoVenda, null, peso, pao, recheio, molho);
+						} catch (SQLException e1) {
+							// TODO Auto-generated catch block
+							e1.printStackTrace();
+						}
 	        			
 	        			System.out.println("Lanches Cadastrados");
 	        			 System.out.println("");

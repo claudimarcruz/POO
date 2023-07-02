@@ -8,7 +8,9 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
+import Trabalho_Etapa2_POO_ClaudimarCruz.Model.BordaModel;
 import Trabalho_Etapa2_POO_ClaudimarCruz.Model.RecheioModel;
+import Trabalho_Etapa2_POO_ClaudimarCruz.View.TelaPizza;
 import Trabalho_Etapa2_POO_ClaudimarCruz.View.TelaRecheio;
 
 
@@ -66,7 +68,9 @@ public class RecheioController {
 	        	
 	        		if(idRecheio instanceof Integer && precoVenda instanceof Double) {
 	        			listaRecheio.add(recheio);
-	        			System.out.println("nome: " + nomeRecheio);
+	        			TelaPizza.atualizarComboRecheio1((ArrayList<RecheioModel>) listaRecheio);
+	        			TelaPizza.atualizarComboRecheio2((ArrayList<RecheioModel>) listaRecheio);
+	        			//System.out.println("nome: " + nomeRecheio);
 		        	JOptionPane.showMessageDialog(null, "Recheio cadastrado!");
 		        	
 		        	System.out.println("Molhos Cadastrados");

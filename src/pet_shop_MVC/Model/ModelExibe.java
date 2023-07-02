@@ -1,23 +1,23 @@
 package pet_shop_MVC.Model;
 
 public class ModelExibe {
-	private Integer id_dono;
+	private Integer cpf;
 	
 	public ModelExibe() {
 		super();
 	}
 
-	public ModelExibe(Integer id_dono) {
+	public ModelExibe(Integer cpf) {
 		super();
-		this.id_dono = id_dono;
+		this.cpf = cpf;
 	}
 
-	public Integer getId_dono() {
-		return id_dono;
+	public Integer getCPF() {
+		return cpf;
 	}
 
-	public void setId_dono(Integer id_dono) {
-		this.id_dono = id_dono;
+	public void setCPF(Integer cpf) {
+		this.cpf = cpf;
 	}
 	
 	

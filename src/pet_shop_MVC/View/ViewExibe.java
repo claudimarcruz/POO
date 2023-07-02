@@ -12,7 +12,7 @@ public class ViewExibe extends JFrame{
 	
 private static final long serialVersionUID = 1L;
 	
-	JTextField text_id_proprietario;
+	JTextField text_cpf_proprietario;
 	
 	JTextArea visorAnimal;
 	
@@ -21,7 +21,7 @@ private static final long serialVersionUID = 1L;
 	JButton botaoExibeAnimal;
 	
 	JButton botaoExibeLista;
-	
+
 	public ViewExibe() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		//setLayout(new BoxLayout(getContentPane(), BoxLayout.X_AXIS));
@@ -29,18 +29,19 @@ private static final long serialVersionUID = 1L;
 		//setLayout((LayoutManager) new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 		//********************************************************
 		
-		JLabel label = new JLabel("Digite o id do proprietario >>>");
+		JLabel label = new JLabel("Digite o CPF do proprietario >>>");
 		add(label);
 		add(new JLabel(" "));
 		
-		text_id_proprietario = new JTextField(8);
-		add(text_id_proprietario);
+		text_cpf_proprietario = new JTextField(8);
+		add(text_cpf_proprietario);
 		
 		botaoExibeAnimal= new JButton("Exibir Animal");
 		add(botaoExibeAnimal);
 		
 		botaoExibeLista = new JButton("Exibir Lista Completa");
 		add(botaoExibeLista);
+		
 		
 		label = new JLabel("Lista: ");
 		add(label);
@@ -57,8 +58,8 @@ private static final long serialVersionUID = 1L;
 	
 	//**********************************************************************
 	
-	public String get_text_id_prop() {
-		return text_id_proprietario.getText();
+	public String get_text_cpf_prop() {
+		return text_cpf_proprietario.getText();
 	}
 	
 	public void setBotaoBehaviorAnimal(ActionListener botaoBehaviorAnimal) {
@@ -67,6 +68,7 @@ private static final long serialVersionUID = 1L;
 	public void setBotaoBehaviorExibir(ActionListener botaoBehaviorExibir) {
 		botaoExibeLista.addActionListener(botaoBehaviorExibir);
 	}
+	
 	public void setVisor(String result) {
 		visorAnimal.setText(result);
 	}

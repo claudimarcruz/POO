@@ -33,7 +33,7 @@ public class PedidoController {
 	    	try {
 	    		idPedido = Integer.parseInt(telaPedido.getID());
 	    	}catch(Exception ex) {
-	    		JOptionPane.showMessageDialog(null, " ERRO! - ID não numérico ****");
+	    		JOptionPane.showMessageDialog(null, " ERRO! - ID não numérico");
 	    	}
 	    	
 	    	String cliente = telaPedido.getNomeCliente();

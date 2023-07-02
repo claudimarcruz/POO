@@ -5,6 +5,11 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+
+
+import java.sql.SQLException;
+
+
 import pet_shop_MVC.Model.ModelCao;
 import pet_shop_MVC.View.ViewCao;
 
@@ -13,14 +18,21 @@ public class ControllerCao {
 	ViewCao cadCao;
 	static List<ModelCao> listaCao = new ArrayList<ModelCao>();
 	
+	
+	
+	//@SuppressWarnings("static-access")
 	public ControllerCao(ViewCao cadastroCao) {
 		cadCao = cadastroCao;
 		
 		cadastroCao.setBotaoBehaviorCao(new BotaoBehaviorCao());
+		
+		
 	}
 	
 	class BotaoBehaviorCao implements ActionListener{
+		@SuppressWarnings("static-access")
 		@Override
+		
 		
 		public void actionPerformed(ActionEvent e) {
 		
@@ -73,7 +85,6 @@ public class ControllerCao {
         	}else {
         		if(idAnim instanceof Integer &&  idadeAnimal instanceof Integer &&
         				pesoAnimal instanceof Float) {
-        			listaCao.add(cao);
         			JOptionPane.showMessageDialog(null, "Cão cadastrado com sucesso");
         		}
         	}
@@ -87,7 +98,7 @@ public class ControllerCao {
 	        String aux ="";
 			for (int i=0 ; i < listaCao.size(); i ++) {
 				
-				aux = aux + "Id: " + listaCao.get(i).getId() + "  /  Nome: " + listaCao.get(i).getId() + "  /  Raça: " + listaCao.get(i).getRaca()
+				aux = aux + "Id: " + listaCao.get(i).getId() + "  /  Nome: " + listaCao.get(i).getNome() + "  /  Raça: " + listaCao.get(i).getRaca()
 						+ "  /  Cor: " + listaCao.get(i).getCor() + "  /  Sexo: " + listaCao.get(i).getSexo() + "  /  Porte: " + listaCao.get(i).getPorte()
 						+ "  /  Peso: " + listaCao.get(i).getPeso()+ "\n";
 			
