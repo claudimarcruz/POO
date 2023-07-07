@@ -289,7 +289,10 @@ public class TelaPagamento extends JFrame {
 		btn_relatorio.addActionListener(new ActionListener() {
 			@SuppressWarnings("static-access")
 			public void actionPerformed(ActionEvent e) {
+				
+				//*************************************************************
 				String titulo = "######### Relatório Lanchonete #########";
+				//*************************************************************
 				String localPdf = "D:\\relatorio.pdf";
 				
 				Conexao conexao = new Conexao();
@@ -319,7 +322,11 @@ public class TelaPagamento extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				try {
 		            Desktop desktop = Desktop.getDesktop();
+		            
+		          //*************************************************************
 		            File folder = new File("D:\\relatorio.pdf");
+		          //*************************************************************
+		             
 		            desktop.open(folder);
 		        } catch (IOException ex) {
 		            ex.printStackTrace();
